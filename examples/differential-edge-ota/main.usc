@@ -1,0 +1,12 @@
+circuit DifferentialEdgeOTA {
+  include "stages.usc"
+
+  layout {
+    OTACells.Bias()
+    OTACells.InputStage()
+    OTACells.OutputStage(phase=P;N, x=XP;XN, out=VOP;VON,
+                         cm=VCM_CTRL, color=#B35B25;#805AA7)
+    OTACells.CommonMode()
+  }
+}
+

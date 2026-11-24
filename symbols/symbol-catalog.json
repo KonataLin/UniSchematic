@@ -1,0 +1,2368 @@
+{
+  "ADC": {
+    "title": "模数转换器",
+    "description": "将模拟输入表示为数字输出码的 ADC 符号。",
+    "pins": {
+      "1": {
+        "description": "模拟输入信号。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "数字码输出。模型决定编码和位宽。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "ADDER": {
+    "title": "模拟加法器",
+    "description": "两个输入求和。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "AND_2INPUT": {
+    "title": "2 输入与门",
+    "description": "全部输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "AND_3INPUT": {
+    "title": "3 输入与门",
+    "description": "全部输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "AND_4INPUT": {
+    "title": "4 输入与门",
+    "description": "全部输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "ARROW_SYMBOL": {
+    "title": "箭头标记",
+    "description": "用于标注的箭头头部，图形标记本身不引出网表端子。",
+    "pins": {}
+  },
+  "BANDPASS_FILTER": {
+    "title": "带通滤波器",
+    "description": "双端口带通滤波功能块。",
+    "pins": {
+      "1": {
+        "description": "信号输入（原图左端）。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "滤波输出（原图右端）。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "BANDSTOP_FILTER": {
+    "title": "带阻滤波器",
+    "description": "双端口带阻或陷波功能块。",
+    "pins": {
+      "1": {
+        "description": "信号输入（原图左端）。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "滤波输出（原图右端）。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "BATTERY": {
+    "title": "电池",
+    "description": "表示直流电池的双端符号。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "BEHAVIORAL_SOURCE": {
+    "title": "行为源",
+    "description": "可表示行为电压源或电流源，具体函数由模型给定。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "BUFFER": {
+    "title": "缓冲器",
+    "description": "对输入提供同相缓冲。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CAPACITOR": {
+    "title": "电容",
+    "description": "普通双端电容，两脚分别接两块极板。",
+    "pins": {
+      "1": {
+        "description": "电容第一块极板。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电容第二块极板。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CCCS": {
+    "title": "电流控制电流源",
+    "description": "两只图示端子构成电流输出支路，控制电流在此模型符号中未引出。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CCVS": {
+    "title": "电流控制电压源",
+    "description": "两只图示端子构成电压输出支路，控制电流在此模型符号中未引出。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CENTER_TAP_INDUCTOR": {
+    "title": "带中心抽头电感",
+    "description": "三个引脚分别为线圈两端和绕组中心抽头。",
+    "pins": {
+      "1": {
+        "description": "绕组的第一外端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "绕组的第二外端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "两段绕组之间的中心抽头。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CGND": {
+    "title": "机壳地",
+    "description": "表示设备机壳的参考连接。",
+    "pins": {
+      "1": {
+        "description": "所标记的接地参考网络端点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "CLOSED_SWITCH": {
+    "title": "闭合开关",
+    "description": "表示闭合状态的两端开关。",
+    "pins": {
+      "1": {
+        "description": "开关主通道第一端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "开关主通道第二端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "COMPARATOR": {
+    "title": "比较器",
+    "description": "比较两个输入电压并输出比较结果。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "COMPARATOR_5TERM": {
+    "title": "比较器（原编号 1、2、5）",
+    "description": "按宏模型原编号保留输入 1、2 和输出 5。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "CURRENT_ARROW_SYMBOL": {
+    "title": "电流方向箭头",
+    "description": "用于标注参考电流方向，图形标记本身不引出网表端子。",
+    "pins": {}
+  },
+  "CURRENT_SOURCE": {
+    "title": "电流源",
+    "description": "两端独立电流源，端子定义参考方向。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DAC": {
+    "title": "数模转换器",
+    "description": "把数字输入码转换为模拟输出的 DAC 符号。",
+    "pins": {
+      "1": {
+        "description": "数字码输入。模型决定编码和位宽。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "模拟信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DEADBAND_DIFFAMP": {
+    "title": "带死区差分放大器",
+    "description": "输入差较小时包含死区的放大功能块。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "DELAY_CELL_SYMBOL": {
+    "title": "延迟单元",
+    "description": "将信号延迟后送到输出。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DEPLETION_NMOS": {
+    "title": "耗尽型 NMOS",
+    "description": "N 沟道耗尽型 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DEPLETION_NMOS_4TERM": {
+    "title": "耗尽型 NMOS（四端）",
+    "description": "N 沟道耗尽型 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DEPLETION_PMOS": {
+    "title": "耗尽型 PMOS",
+    "description": "P 沟道耗尽型 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DEPLETION_PMOS_4TERM": {
+    "title": "耗尽型 PMOS（四端）",
+    "description": "P 沟道耗尽型 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DIFFERENTIAL_OPAMP": {
+    "title": "全差分运算放大器",
+    "description": "具有差分输入和差分输出的运放符号。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "正差分输出。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "负差分输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DIFFERENTIAL_TRANSCONDUCTOR": {
+    "title": "差分跨导单元",
+    "description": "将差分输入电压转换为单端电流。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "跨导转换后的电流输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DIFFERENTIATOR": {
+    "title": "微分器",
+    "description": "输出表示输入信号的时间导数。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "DIODE": {
+    "title": "二极管",
+    "description": "有阳极和阴极的双端二极管。",
+    "pins": {
+      "1": {
+        "description": "阳极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "阴极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DISCRETE_TIME_INTEGRATOR_SYMBOL": {
+    "title": "离散时间积分器",
+    "description": "离散时间信号累加或积分功能块。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "DIVIDER": {
+    "title": "模拟除法器",
+    "description": "双输入模拟除法功能块。符号未标注分子、分母的端子定义。",
+    "pins": {
+      "1": {
+        "description": "原图上方的输入，分子或分母的角色未声明。",
+        "evidence": "unspecified"
+      },
+      "2": {
+        "description": "原图下方的输入，分子或分母的角色未声明。",
+        "evidence": "unspecified"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "D_FLIP_FLOP": {
+    "title": "D 型触发器",
+    "description": "带 Q 和互补输出的时钟触发存储单元。",
+    "pins": {
+      "1": {
+        "description": "待采样的数据输入 D。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "时钟输入。触发边沿由模型定义。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "存储状态输出 Q。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "与 Q 互补的输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "D_FLIP_FLOP_Q_ONLY": {
+    "title": "D 型触发器（单输出）",
+    "description": "时钟触发的 D 型触发器，只引出 Q。",
+    "pins": {
+      "1": {
+        "description": "待采样的数据输入 D。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "时钟输入。触发边沿由模型定义。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "存储状态输出 Q。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "D_FLIP_FLOP_WITH_RESET": {
+    "title": "带复位 D 型触发器",
+    "description": "带独立复位和互补输出的 D 型触发器。",
+    "pins": {
+      "1": {
+        "description": "待采样的数据输入 D。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "时钟输入。触发边沿由模型定义。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "复位输入。有效电平以模型为准。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "存储状态输出 Q。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "与 Q 互补的输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "EGND": {
+    "title": "大地",
+    "description": "表示保护地或大地连接。",
+    "pins": {
+      "1": {
+        "description": "所标记的接地参考网络端点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "EXTERNALLY_CONTROLLED_SWITCH": {
+    "title": "外部控制开关",
+    "description": "两端开关加一个外部控制端。",
+    "pins": {
+      "1": {
+        "description": "开关主通道第一端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "开关主通道第二端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "GROUND_SYMBOL": {
+    "title": "接地符号",
+    "description": "在指定网上显示接地标记。",
+    "pins": {
+      "1": {
+        "description": "所标记的接地参考网络端点。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "HIGHPASS_FILTER": {
+    "title": "高通滤波器",
+    "description": "双端口高通滤波功能块。",
+    "pins": {
+      "1": {
+        "description": "信号输入（原图左端）。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "滤波输出（原图右端）。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "IDEAL_BALUN": {
+    "title": "理想巴伦",
+    "description": "平衡与非平衡信号变换符号。该库的四个引脚没有参考极性标记。",
+    "pins": {
+      "1": {
+        "description": "图面右上端。绕组参考极性及信号分配须查看模型。",
+        "evidence": "unspecified"
+      },
+      "2": {
+        "description": "图面右下端。绕组参考极性及信号分配须查看模型。",
+        "evidence": "unspecified"
+      },
+      "3": {
+        "description": "图面左上端。绕组参考极性及信号分配须查看模型。",
+        "evidence": "unspecified"
+      },
+      "4": {
+        "description": "图面左下端。绕组参考极性及信号分配须查看模型。",
+        "evidence": "unspecified"
+      }
+    }
+  },
+  "INDUCTOR": {
+    "title": "电感",
+    "description": "普通双端线圈。p/n 定义参考方向，理想电感本身无极性。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "INTEGRATOR_SYMBOL": {
+    "title": "积分器",
+    "description": "对输入积分的功能块。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "INVERTER": {
+    "title": "反相器",
+    "description": "输出输入逻辑状态的反值。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "IO_PORT_SYMBOL": {
+    "title": "输入输出端口",
+    "description": "图纸接口和端口圆圈。USC 的 port 声明使用此符号。",
+    "pins": {
+      "1": {
+        "description": "所标记接口的电气接入点。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "IPIN": {
+    "title": "输入引脚符号",
+    "description": "用于表示图纸的输入接口。",
+    "pins": {
+      "1": {
+        "description": "所标记接口的电气接入点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "IPROBE": {
+    "title": "电流探针",
+    "description": "串接于需要观察电流的支路。",
+    "pins": {
+      "1": {
+        "description": "串联测量支路第一端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "串联测量支路第二端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "IPULSE": {
+    "title": "脉冲电流源",
+    "description": "脉冲或数字比特流电流激励。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "IPWL": {
+    "title": "分段线性电流源",
+    "description": "按分段线性时间波形激励电流。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "ISIN": {
+    "title": "正弦电流源",
+    "description": "交流或正弦激励电流源。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "JK_FF": {
+    "title": "JK 触发器",
+    "description": "带时钟和互补输出的 JK 触发器。原图左侧从下到上标为 J、K、CLK。",
+    "pins": {
+      "1": {
+        "description": "J 数据输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "K 数据输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "时钟输入。触发边沿由模型定义。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "存储状态输出 Q。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "与 Q 互补的输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "JUNCTION_SYMBOL": {
+    "title": "连接点标记",
+    "description": "表示导线节点的图形。普通连接点由同网走线自动生成。",
+    "pins": {}
+  },
+  "LIMITING_DIFFAMP": {
+    "title": "限幅差分放大器",
+    "description": "对输入电压差放大并限制输出幅度。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "LOWPASS_FILTER": {
+    "title": "低通滤波器",
+    "description": "双端口低通滤波功能块。",
+    "pins": {
+      "1": {
+        "description": "信号输入（原图左端）。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "滤波输出（原图右端）。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "MIXER": {
+    "title": "射频混频器",
+    "description": "含两个信号端和一个本振端的三端混频符号，信号端可依上下变频用途分配。",
+    "pins": {
+      "1": {
+        "description": "左侧射频信号端，按用途分配 RF 或 IF。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "底部本地振荡器（LO）端。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "右侧射频信号端，按用途分配 IF 或 RF。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "MULTIPLEXER": {
+    "title": "模拟多路选择器",
+    "description": "符号有三路信号输入、两只控制端和一路输出。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "图面上侧选择控制端。具体选择编码由模型定义。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "图面下侧选择控制端。具体选择编码由模型定义。",
+        "evidence": "symbol"
+      },
+      "6": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "MULTIPLIER": {
+    "title": "模拟乘法器",
+    "description": "两个输入相乘。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NAMED_GROUND_SYMBOL": {
+    "title": "具名接地符号",
+    "description": "在指定网上显示带网名的接地标记。",
+    "pins": {
+      "1": {
+        "description": "所标记的接地参考网络端点。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NAND_2INPUT": {
+    "title": "2 输入与非门",
+    "description": "对输入的逻辑与取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NAND_3INPUT": {
+    "title": "3 输入与非门",
+    "description": "对输入的逻辑与取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NAND_4INPUT": {
+    "title": "4 输入与非门",
+    "description": "对输入的逻辑与取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NDMOS": {
+    "title": "N 沟道 DMOS",
+    "description": "N 沟道双扩散 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NDMOS_4TERM": {
+    "title": "N 沟道 DMOS（四端）",
+    "description": "N 沟道双扩散 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NJFET": {
+    "title": "N 沟道结型场效应管",
+    "description": "用反偏结控制 N 沟道的 JFET。标准库使用数字端子。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NMES4": {
+    "title": "四端 N 沟道 MESFET",
+    "description": "四端金属半导体场效应管。库未明确命名第四端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "第四个外露端点。原库未定义功能，请核对具体器件模型。",
+        "evidence": "unspecified"
+      }
+    }
+  },
+  "NMOS": {
+    "title": "NMOS 场效应管",
+    "description": "N 沟道增强型 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NMOS_4TERM": {
+    "title": "NMOS 场效应管（四端）",
+    "description": "N 沟道增强型 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NOR_2INPUT": {
+    "title": "2 输入或非门",
+    "description": "对输入的逻辑或取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NOR_3INPUT": {
+    "title": "3 输入或非门",
+    "description": "对输入的逻辑或取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NOR_4INPUT": {
+    "title": "4 输入或非门",
+    "description": "对输入的逻辑或取反。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NO_CONNECT_SYMBOL": {
+    "title": "未接标记",
+    "description": "表示开路引脚的图形标记。USC 浮空实参使用减号。",
+    "pins": {}
+  },
+  "NPN": {
+    "title": "NPN 双极型晶体管",
+    "description": "引出集电极、基极和发射极。",
+    "pins": {
+      "1": {
+        "description": "集电极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "基极，控制集电极电流。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "发射极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "NPN4": {
+    "title": "四端 NPN 晶体管",
+    "description": "额外引出衬底端的双极型晶体管。",
+    "pins": {
+      "1": {
+        "description": "集电极。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "基极，控制集电极电流。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "发射极。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "ON_PAGE_CONN": {
+    "title": "同页连接器",
+    "description": "用于标注同页网络的可见连接端。",
+    "pins": {
+      "1": {
+        "description": "所标记接口的电气接入点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "OPAMP": {
+    "title": "运算放大器",
+    "description": "具有差分输入和单端输出的运放符号。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "OPAMP_5TERM": {
+    "title": "运算放大器（原编号 1、2、5）",
+    "description": "该符号库保留模型的原编号，实际引出 1、2、5 三脚。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "OPAMP_6TERM": {
+    "title": "六端运算放大器",
+    "description": "单端输出、两信号输入、两供电端和参考端。",
+    "pins": {
+      "1": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "放大器的参考端。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "正供电端。",
+        "evidence": "symbol"
+      },
+      "6": {
+        "description": "负供电或负电源网络端点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "OPIN": {
+    "title": "输出引脚符号",
+    "description": "用于表示图纸的输出接口。",
+    "pins": {
+      "1": {
+        "description": "所标记接口的电气接入点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "OR_2INPUT": {
+    "title": "2 输入或门",
+    "description": "任一输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "OR_3INPUT": {
+    "title": "3 输入或门",
+    "description": "任一输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "OR_4INPUT": {
+    "title": "4 输入或门",
+    "description": "任一输入为真时输出为真。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "OSC": {
+    "title": "射频振荡器",
+    "description": "单端振荡源符号。",
+    "pins": {
+      "1": {
+        "description": "模拟信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "PDMOS": {
+    "title": "P 沟道 DMOS",
+    "description": "P 沟道双扩散 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PDMOS_4TERM": {
+    "title": "P 沟道 DMOS（四端）",
+    "description": "P 沟道双扩散 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PJFET": {
+    "title": "P 沟道结型场效应管",
+    "description": "用反偏结控制 P 沟道的 JFET。标准库使用数字端子。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PMOS": {
+    "title": "PMOS 场效应管",
+    "description": "P 沟道增强型 MOSFET，本符号引出漏、栅、源三端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PMOS_4TERM": {
+    "title": "PMOS 场效应管（四端）",
+    "description": "P 沟道增强型 MOSFET，额外引出体端。",
+    "pins": {
+      "1": {
+        "description": "漏极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "栅极，控制沟道导通。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "源极。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "体端或衬底端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PNP": {
+    "title": "PNP 双极型晶体管",
+    "description": "引出集电极、基极和发射极。",
+    "pins": {
+      "1": {
+        "description": "集电极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "基极，控制集电极电流。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "发射极。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "PWR": {
+    "title": "电源箭头",
+    "description": "用于标识网络上的电源节点。",
+    "pins": {
+      "1": {
+        "description": "所标记的供电网络端点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "QUADRATURE": {
+    "title": "90 度正交混合器符号",
+    "description": "来源描述为四端正交混合器，这份符号资产只暴露两个未命名引脚。",
+    "pins": {
+      "1": {
+        "description": "图面上引脚，原库未声明其混合器端口角色。",
+        "evidence": "unspecified"
+      },
+      "2": {
+        "description": "图面下引脚，原库未声明其混合器端口角色。",
+        "evidence": "unspecified"
+      }
+    }
+  },
+  "QUANTIZER_SYMBOL": {
+    "title": "量化器",
+    "description": "将输入映射为离散电平。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "RC_LINE": {
+    "title": "均匀 RC 传输线",
+    "description": "带电容参考节点的分布电阻电容线。",
+    "pins": {
+      "1": {
+        "description": "分布 RC 线的第一端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "分布 RC 线的第二端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "分布电容连接的参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "RESISTOR": {
+    "title": "电阻",
+    "description": "普通双端电阻。p/n 定义电压和电流参考方向。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "RF_PORT": {
+    "title": "射频端口",
+    "description": "带参考端的射频激励或测量接口。",
+    "pins": {
+      "1": {
+        "description": "射频信号端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "射频信号的参考/返回端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "SCHOTTKY": {
+    "title": "肖特基二极管",
+    "description": "肖特基势垒二极管。",
+    "pins": {
+      "1": {
+        "description": "阳极。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "阴极。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "SCR": {
+    "title": "四端可控硅",
+    "description": "原图有阳极、阴极以及分别接在阳极侧和阴极侧的控制引线。",
+    "pins": {
+      "1": {
+        "description": "阳极。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "与阳极一侧相连的控制门端。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "与阴极一侧相连的控制门端。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "阴极。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "SP3TSWITCH": {
+    "title": "单刀三掷开关",
+    "description": "一个公共端可切换到三个固定触点。",
+    "pins": {
+      "1": {
+        "description": "公共动触点。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "第一固定触点。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "第二固定触点。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "第三固定触点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "SP4TSWITCH": {
+    "title": "单刀四掷开关",
+    "description": "一个公共端可切换到四个固定触点。",
+    "pins": {
+      "1": {
+        "description": "公共动触点。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "第一固定触点。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "第二固定触点。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "第三固定触点。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "第四固定触点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "SPDT_SWITCH_SYMBOL": {
+    "title": "单刀双掷开关",
+    "description": "公共动触点可连接到两个固定触点之一。",
+    "pins": {
+      "1": {
+        "description": "公共动触点。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第一固定触点。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第二固定触点。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "SUBTRACTOR": {
+    "title": "模拟减法器",
+    "description": "求正输入与负输入之差的模拟功能块。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "SUPPLY_SYMBOL": {
+    "title": "电源符号",
+    "description": "在指定网上显示电源标记。",
+    "pins": {
+      "1": {
+        "description": "所标记的供电网络端点。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "SWITCH": {
+    "title": "理想开关",
+    "description": "表示两端理想开关，控制端未引出。",
+    "pins": {
+      "1": {
+        "description": "开关主通道第一端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "开关主通道第二端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "THYRISTOR": {
+    "title": "三端晶闸管",
+    "description": "三端功能框样式的晶闸管符号，原图未标主端极性。",
+    "pins": {
+      "1": {
+        "description": "图面上方主通道端，原图未标阳极/阴极。",
+        "evidence": "unspecified"
+      },
+      "2": {
+        "description": "图面下方主通道端，原图未标阳极/阴极。",
+        "evidence": "unspecified"
+      },
+      "3": {
+        "description": "图面侧边触发控制端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "TRANSCONDUCTOR": {
+    "title": "跨导单元",
+    "description": "将输入电压转换为输出电流。",
+    "pins": {
+      "1": {
+        "description": "输入电压信号。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "跨导转换后的电流输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "TRANSFORMER": {
+    "title": "变压器",
+    "description": "带原边和副边参考极性的双绕组变压器。",
+    "pins": {
+      "1": {
+        "description": "原边绕组的同名或正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "原边绕组的负参考端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "副边绕组的同名或正参考端。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "副边绕组的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "TRANSMISSION_LINE": {
+    "title": "传输线",
+    "description": "具有两对信号与参考端的传输线。",
+    "pins": {
+      "1": {
+        "description": "端口 1 的信号端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "端口 1 的参考端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "端口 2 的信号端。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "端口 2 的参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "T_COIL": {
+    "title": "T 型耦合电感",
+    "description": "两段耦合线圈，中点引出，符号绘有两外端之间的并联电容。",
+    "pins": {
+      "1": {
+        "description": "绕组的第一外端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "绕组的第二外端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "两段绕组之间的中心抽头。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "UNIT_DELAY_SYMBOL": {
+    "title": "单位延迟单元",
+    "description": "离散系统的单采样延迟。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VARIABLE_CAPACITOR": {
+    "title": "可调电容",
+    "description": "双端可变电容，调节箭头不对应额外引脚。",
+    "pins": {
+      "1": {
+        "description": "电容第一块极板。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电容第二块极板。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VARIABLE_GAIN_AMPLIFIER": {
+    "title": "可变增益放大器",
+    "description": "差分输入、单端输出，具有额外的两只控制端。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "图面上侧增益控制端，具体偏置/极性由模型定义。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "图面下侧增益控制端，具体偏置/极性由模型定义。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VARIABLE_INDUCTOR": {
+    "title": "可调电感",
+    "description": "带可调标记的双端线圈。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VARIABLE_RESISTOR": {
+    "title": "可调电阻",
+    "description": "双端可变电阻，调节箭头不对应额外引脚。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VCCAP": {
+    "title": "压控电容",
+    "description": "以控制电压改变等效电容的四端符号。",
+    "pins": {
+      "1": {
+        "description": "电容第一块极板。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电容第二块极板。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "图面上侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      },
+      "4": {
+        "description": "图面下侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      }
+    }
+  },
+  "VCCS": {
+    "title": "电压控制电流源",
+    "description": "两端电流输出符号，控制端未引出。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VCCSP": {
+    "title": "差分输出压控电流源",
+    "description": "由差分控制电压决定差分输出电流的受控源。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "控制电压的负参考输入。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VCCS_4TERM": {
+    "title": "四端电压控制电流源",
+    "description": "两端电流输出和两个电压控制端。",
+    "pins": {
+      "1": {
+        "description": "电流源正参考端，p 到 n 定义正电流方向。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电流源负参考端，正电流方向为 p 到 n。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "控制电压的负参考输入。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VCO": {
+    "title": "压控振荡器",
+    "description": "输出振荡频率受输入控制电压影响。原图没有标出两个控制端的极性。",
+    "pins": {
+      "1": {
+        "description": "图面上侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      },
+      "2": {
+        "description": "图面下侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      },
+      "3": {
+        "description": "模拟信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VCRES": {
+    "title": "压控电阻",
+    "description": "以控制电压改变等效阻值的四端符号。",
+    "pins": {
+      "1": {
+        "description": "第一端，可作为电压差的正参考端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "第二端，可作为电压差的负参考端。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "图面上侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      },
+      "4": {
+        "description": "图面下侧控制端，原库未标控制极性。",
+        "evidence": "unspecified"
+      }
+    }
+  },
+  "VCVS": {
+    "title": "电压控制电压源",
+    "description": "两端电压输出符号，控制端未引出。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VCVSP": {
+    "title": "差分输出压控电压源",
+    "description": "由差分控制电压决定差分输出电压的受控源。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "控制电压的负参考输入。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VCVS_4TERM": {
+    "title": "四端电压控制电压源",
+    "description": "两端电压输出和两个电压控制端。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "控制电压的负参考输入。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VC_VG_DIFFAMP": {
+    "title": "电压控制可变增益差分放大器",
+    "description": "差分输入、单端输出，额外端子用于增益控制。",
+    "pins": {
+      "1": {
+        "description": "同相或正差分输入。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "反相或负差分输入。",
+        "evidence": "symbol"
+      },
+      "3": {
+        "description": "图面上侧增益控制端，具体偏置/极性由模型定义。",
+        "evidence": "symbol"
+      },
+      "4": {
+        "description": "图面下侧增益控制端，具体偏置/极性由模型定义。",
+        "evidence": "symbol"
+      },
+      "5": {
+        "description": "信号输出。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VOLTAGE_AMPLIFIER": {
+    "title": "电压放大器",
+    "description": "放大输入电压，输出为电压信号。",
+    "pins": {
+      "1": {
+        "description": "输入电压信号。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "输出电压信号。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VOLTAGE_CONTROLLED_SWITCH": {
+    "title": "电压控制开关",
+    "description": "开关通断由差分控制电压决定。",
+    "pins": {
+      "1": {
+        "description": "开关主通道第一端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "开关主通道第二端。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "非反相的控制输入；差分控制量以此为正端。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "控制电压的负参考输入。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VOLTAGE_SOURCE": {
+    "title": "电压源",
+    "description": "两端独立电压源。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "VPULSE": {
+    "title": "脉冲电压源",
+    "description": "脉冲或数字比特流电压激励。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VPWL": {
+    "title": "分段线性电压源",
+    "description": "按分段线性时间波形激励电压。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VSIN": {
+    "title": "正弦电压源",
+    "description": "交流或正弦激励电压源。",
+    "pins": {
+      "1": {
+        "description": "电压输出的正参考端。",
+        "evidence": "symbol"
+      },
+      "2": {
+        "description": "电压输出的负参考端。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "VSS_SYMBOL": {
+    "title": "负电源符号",
+    "description": "在绑定网络上显示负供电标记。",
+    "pins": {
+      "1": {
+        "description": "负供电或负电源网络端点。",
+        "evidence": "symbol"
+      }
+    }
+  },
+  "XNOR_2INPUT": {
+    "title": "2 输入同或门",
+    "description": "输出输入的偶校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "XNOR_3INPUT": {
+    "title": "3 输入同或门",
+    "description": "输出输入的偶校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "XNOR_4INPUT": {
+    "title": "4 输入同或门",
+    "description": "输出输入的偶校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "XOR_2INPUT": {
+    "title": "2 输入异或门",
+    "description": "输出输入的奇校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "XOR_3INPUT": {
+    "title": "3 输入异或门",
+    "description": "输出输入的奇校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "XOR_4INPUT": {
+    "title": "4 输入异或门",
+    "description": "输出输入的奇校验。",
+    "pins": {
+      "1": {
+        "description": "第一个信号输入 A。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "第二个信号输入 B。",
+        "evidence": "defined"
+      },
+      "3": {
+        "description": "第三个信号输入 C。",
+        "evidence": "defined"
+      },
+      "4": {
+        "description": "第四个信号输入 D。",
+        "evidence": "defined"
+      },
+      "5": {
+        "description": "逻辑信号输出。",
+        "evidence": "defined"
+      }
+    }
+  },
+  "ZENER_DIODE": {
+    "title": "齐纳二极管",
+    "description": "稳压用二极管，典型应用使用反向击穿区。",
+    "pins": {
+      "1": {
+        "description": "阳极。",
+        "evidence": "defined"
+      },
+      "2": {
+        "description": "阴极。",
+        "evidence": "defined"
+      }
+    }
+  }
+}

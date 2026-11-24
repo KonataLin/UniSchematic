@@ -1,0 +1,203 @@
+# Experimental topology. Port names identify nets shared across drawing blocks.
+# Device sizes, passive values and loop stability are left to circuit simulation.
+circuit OTACells {
+  module Bias() {
+    title "Bias reference"
+
+    IREF(#25805C)  VDD VBN CURRENT_SOURCE
+    MNREF(#25805C) VBN VBN VSS NMOS
+    MPREF(#25805C) VBP VBP VDD PMOS
+    MNB(#25805C)   VBP VBN VSS NMOS
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port VBN
+    port VBP
+
+    track(0): VBN
+    track(1): IREF.p, MNREF.d
+    track(2): VDD.p, VSS.p
+    track(3): MPREF.s, MNB.d
+    track(4): VBP
+
+    face VDD.p down
+    face VSS.p up
+    face IREF: p:up n:down
+    face MNREF MNB: g:left s:down
+    face MPREF: g:right s:up
+    face VBN: p:right
+    face VBP: p:left
+
+    align_y IREF.p MPREF.s VDD.p
+    align_y MNREF.s MNB.s VSS.p
+    align_y VBN MNREF.g
+    align_y VBP MPREF.g
+    above IREF MNREF
+    above MPREF MNB
+  }
+
+  module InputStage() {
+    title "Cross-coupled input"
+
+    MBP(#3267A8) XP VBP VDD PMOS
+    MBN(#3267A8) XN VBP VDD PMOS
+    MDP(#3267A8) XP XP VDD PMOS
+    MDN(#3267A8) XN XN VDD PMOS
+    MXP(#4569A6) XP XN VDD PMOS
+    MXN(#4569A6) XN XP VDD PMOS
+    MIP(#3267A8) XP VINP TAIL NMOS
+    MIN(#3267A8) XN VINN TAIL NMOS
+    MTAIL(#3267A8) TAIL VBN VSS NMOS
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port VINP
+    port VINN
+    port XP
+    port XN
+    port VBP
+    port VBN
+
+    track(0): VBP, XP, VINP, VBN
+    track(1): MBP.s
+    track(2): MDP.s
+    track(3): MXP.s, MIP.d
+    track(4): VDD.p, MTAIL.d, VSS.p
+    track(5): MXN.s, MIN.d
+    track(6): MDN.s
+    track(7): MBN.s
+    track(8): XN, VINN
+
+    face VDD.p down
+    face VSS.p up
+    face MBP MDP MXP: g:left s:up
+    face MBN MDN MXN: g:right s:up
+    face MIP MTAIL: g:left s:down
+    face MIN: g:right s:down
+    face VBP VBN XP VINP: p:right
+    face XN VINN: p:left
+
+    align_y MBP.s MBN.s MDP.s MDN.s VDD.p
+    above MXP.s MXN.s
+    align_y MIP.d MIN.d XP XN
+    align_y VINP MIP.g
+    align_y VINN MIN.g
+    align_y VBP MBP.g
+    align_y VBN MTAIL.g
+    align_y VSS.p MTAIL.s
+    above MDP.d MXP.s
+    above MXP.d MIP.d
+    align_y MIP.s MIN.s MTAIL.d
+    center_x MTAIL.d (MIP.s MIN.s)
+  }
+
+  module OutputStage(phase, x, out, cm, color) {
+    title "Output {phase} with edge assist"
+
+    MP_{phase}({color}) {out} {cm} VDD PMOS
+    MN_{phase}({color}) {out} {x}  VSS NMOS
+    AP_{phase}({color}) {out} GP_{phase} VDD PMOS
+    AN_{phase}({color}) {out} GN_{phase} VSS NMOS
+
+    CP_{phase}(#566B7F) GP_{phase} {x} CAPACITOR
+    CN_{phase}(#566B7F) GN_{phase} {x} CAPACITOR
+    RP_{phase}(#566B7F) GP_{phase} VDD RESISTOR
+    RN_{phase}(#566B7F) GN_{phase} VSS RESISTOR
+
+    RZ_{phase}(#566B7F) {x} Z_{phase} RESISTOR
+    CZ_{phase}(#566B7F) Z_{phase} {out} CAPACITOR
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port {cm}
+    port {x}
+    port {out}
+
+    track(0): {x}
+    track(2.5): {cm}
+    track(1): RZ_{phase}.1
+    track(2): CZ_{phase}.1
+    track(3): MP_{phase}.s, MN_{phase}.d
+    track(4): AP_{phase}.s, AN_{phase}.d
+    track(5): CP_{phase}.2, CN_{phase}.2
+    track(6): RP_{phase}.1, RN_{phase}.1
+    track(3.5): VDD.p, VSS.p
+    track(7): {out}
+
+    face VDD.p down
+    face VSS.p up
+    face MP_{phase}: g:left s:up
+    face MN_{phase}: g:left s:down
+    face AP_{phase}: g:right s:up
+    face AN_{phase}: g:right s:down
+    face CP_{phase} CN_{phase} RP_{phase} RN_{phase}: 1:left 2:right
+    face RZ_{phase} CZ_{phase}: 1:left 2:right
+    face {x} {cm}: p:right
+    face {out}: p:left
+
+    align_y MP_{phase}.s AP_{phase}.s VDD.p
+    align_y MN_{phase}.s AN_{phase}.s VSS.p
+    align_y {cm} MP_{phase}.s
+    align_y {x} MN_{phase}.g
+    align_y CP_{phase}.1 AP_{phase}.g
+    align_y CN_{phase}.1 (AN_{phase}.g AN_{phase}.s)
+    align_y RP_{phase}.1 (AP_{phase}.s AP_{phase}.g)
+    align_y RN_{phase}.1 (AN_{phase}.s AN_{phase}.g)
+    align_y RZ_{phase}.1 CZ_{phase}.1 {out} MP_{phase}.d
+    above MP_{phase}.d MN_{phase}.d
+  }
+
+  module CommonMode() {
+    title "Common-mode feedback"
+
+    RS_P(#007A82) VOP VAVG RESISTOR
+    RS_N(#007A82) VON VAVG RESISTOR
+    MSA(#007A82)  N_CM VAVG TAIL_CM NMOS
+    MSB(#007A82)  VCM_CTRL VCM_REF TAIL_CM NMOS
+    MLA(#007A82)  N_CM N_CM VDD PMOS
+    MLB(#007A82)  VCM_CTRL N_CM VDD PMOS
+    MST(#007A82)  TAIL_CM VBN VSS NMOS
+    C_D(#566B7F) VCM_CTRL VSS CAPACITOR
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port VOP
+    port VON
+    port VBN
+    port VCM_REF
+    port VCM_CTRL
+
+    track(0): VOP, VON, VBN
+    track(1): RS_P.1, RS_N.1
+    track(3): MLA.s, MSA.d
+    track(4): VDD.p, MST.d, VSS.p
+    track(5): MLB.s, MSB.d
+    track(6): VCM_CTRL, VCM_REF
+    track(7): C_D.1
+
+    face VDD.p down
+    face VSS.p up
+    face RS_P RS_N: 1:left 2:right
+    face C_D: 1:up 2:down
+    face MLA: g:right s:up
+    face MLB: g:left s:up
+    face MSA MST: g:left s:down
+    face MSB: g:right s:down
+    face VOP VON VBN: p:right
+    face VCM_CTRL VCM_REF: p:left
+
+    align_y MLA.s MLB.s VDD.p
+    align_y MSA.d MSB.d
+    align_y MSA.s MSB.s MST.d
+    align_y VSS.p MST.s
+    align_y VOP RS_P.1
+    align_y VON RS_N.1
+    align_y MSA.g (RS_P.2 RS_N.2)
+    align_y VCM_REF MSB.g
+    align_y VBN MST.g
+    align_y VCM_CTRL (MLB.d MSB.d)
+    align_y C_D.1 MST.d
+    center_x MST.d (MSA.s MSB.s)
+  }
+}
+

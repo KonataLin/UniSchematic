@@ -1,0 +1,163 @@
+# Classic uA741-style bipolar op-amp with Q18 on a dedicated track right of Q19.
+circuit UA741Q18Right {
+  module Core() {
+    title "uA741 - Q18 right"
+
+    # Input differential stage + active mirror load (Q1-Q9, R1-R3)
+    Q8  N_C12   N_C12   VCC     PNP
+    Q9  N_B34   N_C12   VCC     PNP
+    Q1  N_C12   VINP    N_E13   NPN
+    Q2  N_C12   VINN    N_E24   NPN
+    Q3  N_C35   N_B34   N_E13   PNP
+    Q4  N_C46   N_B34   N_E24   PNP
+    Q5  N_C35   N_B56   N_E5    NPN
+    Q6  N_C46   N_B56   N_E6    NPN
+    Q7  VCC     N_C35   N_B56   NPN
+    R1  N_E5    VEE     RESISTOR
+    R2  N_E6    VEE     RESISTOR
+    R3  N_B56   VEE     RESISTOR
+
+    # Master bias & Widlar current source (Q10-Q12, R4-R5)
+    Q10 N_B34   N_B1011 N_E10   NPN
+    R4  N_E10   VEE     RESISTOR
+    Q12 N_B1213 N_B1213 VCC     PNP
+    R5  N_B1213 N_B1011 RESISTOR
+    Q11 N_B1011 N_B1011 VEE     NPN
+
+    # Second stage (Darlington gain + Miller C1) & VBE multiplier (Q13, Q16-Q19, R8-R10, C1)
+    C1  N_C46   N_GAIN  CAPACITOR
+    Q16 VCC     N_C46   N_E16   NPN
+    R9  N_E16   VEE     RESISTOR
+    Q13 N_OUT_P N_B1213 VCC     PNP
+    Q18 N_OUT_P N_OUT_P N_E18   NPN
+    Q19 N_OUT_P N_E18   N_GAIN  NPN
+    R10 N_E18   N_GAIN  RESISTOR
+    Q17 N_GAIN  N_E16   N_E17   NPN
+    R8  N_E17   VEE     RESISTOR
+
+    # Class-AB push-pull output stage + short-circuit limiter Q15 (Q14-Q15, Q20, R6-R7)
+    Q14 VCC     N_OUT_P N_E14   NPN
+    Q15 N_OUT_P N_E14   VOUT    NPN
+    R6  N_E14   VOUT    RESISTOR
+    R7  VOUT    N_E20   RESISTOR
+    Q20 VEE     N_GAIN  N_E20   PNP
+
+    # Supplies and external ports
+    VCC VCC SUPPLY_SYMBOL
+    VEE VEE SUPPLY_SYMBOL
+    port VINP
+    port VINN
+    port VOUT
+
+    # --- 2. Track placement (top-to-bottom FIFO within each track) ---
+    # Track 0: Non-inverting input
+    track(0): VINP.p
+
+    # Track 1: Input left current column (5 stacked devices)
+    track(1): Q8.e, Q1.c, Q3.e, Q5.c, R1.1
+
+    # Track 1.5: Active load buffer on diff-pair symmetry axis
+    track(1.5): Q7.c, R3.1
+
+    # Track 2: Input right current column (5 stacked devices)
+    track(2): Q9.e, Q2.c, Q4.e, Q6.c, R2.1
+
+    # Track 3: Inverting input (top) + Widlar sink (bottom)
+    track(3): VINN.p, Q10.c, R4.1
+
+    # Track 4: Master bias reference column
+    track(4): Q12.e, R5.1, Q11.c
+
+    # Track 4.5: Central supply & negative rail symbols
+    track(4.5): VCC.p, VEE.p
+
+    # Track 5: Miller cap (anchored on right pin .2 to stay left of Track 6) + Q16/R9
+    track(5): C1.2, Q16.c, R9.1
+
+    # Track 6: Gain & VBE multiplier column
+    track(6): Q13.e, Q19.c, Q17.c, R8.1
+
+    # Track 6.5: Q18 alone to the right of Q19
+    track(6.5): Q18.c
+
+    # Track 7: Inter-stage limiter Q15 & VBE bias resistor R10
+    track(7): Q15.c, R10.1
+
+    # Track 8: Class-AB push-pull output column
+    track(8): Q14.c, R6.1, R7.1, Q20.e
+
+    # Track 9: Output port
+    track(9): VOUT.p
+
+    # --- 3. Fixed orientations ---
+    face Q8  b:right e:up
+    face Q9  b:left  e:up
+    face Q1  b:left  e:down
+    face Q2  b:right e:down
+    face Q3  b:right e:up
+    face Q4  b:left  e:up
+    face Q5  b:right e:down
+    face Q6  b:left  e:down
+    face Q7  b:left  e:down
+    face R1  1:up    2:down
+    face R2  1:up    2:down
+    face R3  1:up    2:down
+
+    face Q10 b:right e:down
+    face R4  1:up    2:down
+    face Q12 b:right e:up
+    face R5  1:up    2:down
+    face Q11 b:left  e:down
+
+    face C1  1:left  2:right
+    face Q16 b:left  e:down
+    face R9  1:up    2:down
+    face Q13 b:left  e:up
+    face Q18 b:left  e:down
+    face Q19 b:right e:down
+    face R10 1:up    2:down
+    face Q17 b:left  e:down
+    face R8  1:up    2:down
+
+    face Q14 b:left  e:down
+    face Q15 b:right e:down
+    face R6  1:up    2:down
+    face R7  1:up    2:down
+    face Q20 b:left  e:up
+
+    face VCC.p  down
+    face VEE.p  up
+    face VINP.p right
+    face VINN.p left
+    face VOUT.p left
+
+    # --- 4. Geometric relations ---
+    # Full-width top VCC rail & bottom VEE rail
+    align_y Q8.e Q9.e Q12.e Q13.e Q14.c VCC.p
+    align_y R1.2 R3.2 R2.2 R4.2 Q11.e R9.2 R8.2 Q20.c VEE.p
+
+    # Row 2: Input diff pair, Miller cap, upper VBE multiplier, Q15/R6
+    align_y Q1.c Q2.c C1.2 Q18.c R6.1 Q15.b
+    align_y VINP.p Q1.b
+    align_y VINN.p Q2.b
+
+    # Row 3: Level-shift PNPs, lower VBE multiplier, R7/R10
+    align_y Q3.e Q4.e Q19.c R7.1
+    align_y R10.1 Q19.b
+
+    # Row 4: Bottom active mirror, Widlar sink, gain stage (Q16.e aligns horizontally to Q17.b)
+    align_y Q5.c Q7.c Q6.c Q10.c Q17.c
+    align_y Q16.e Q17.b
+
+    # Output port centered vertically between R6 and R7
+    align_y VOUT.p (R6.2 R7.1)
+
+    # Symmetry axes (both strictly between adjacent integer tracks)
+    center_x Q7.c (Q5.c Q6.c)
+    center_x VCC.p (Q12.e Q16.c)
+  }
+
+  layout {
+    Core()
+  }
+}
