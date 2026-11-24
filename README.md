@@ -5,12 +5,12 @@
 <p align="center">
   <a href="https://github.com/KonataLin/UniSchematic/releases/latest"><strong>下载</strong></a>
   · <a href="./examples/README.md">示例</a>
-  · <a href="./Reference/README.md">构图参考</a>
+  · <a href="./reference/README.md">构图参考</a>
 </p>
 
 <p align="center">
-  <a href="./Reference/README.md">
-    <img src="./Reference/figures/sky130-preview.png" width="840" alt="SKY130 三模块原理图预览">
+  <a href="./reference/README.md">
+    <img src="./reference/figures/sky130-preview.png" width="840" alt="SKY130 三模块原理图预览">
   </a>
 </p>
 
@@ -289,7 +289,7 @@ The binary records acceptance locally and asks again when the agreement changes.
 - 提示 `track(k) requires 'A' above 'B'` 时，同轨列表要求 A 在 B 上方。如果本来想让两者等高，把其中一个放到不同轨道并保留 `align_y`。如果本来想上下叠放，检查列表顺序、`face` 方向和参与等高或上下约束的具体引脚。
 - 端子数、端子名或朝向报错时，用 `unischematic -instance MODEL` 核对端子顺序与名称，再调整器件声明或 `face`。
 
-完整的网表转图案例、摆位标注和两版 USC 见 [构图参考](./Reference/REFERENCE.md)。
+完整的网表转图案例、摆位标注和两版 USC 见 [构图参考](./reference/REFERENCE.md)。
 
 ## uA741 示例图
 

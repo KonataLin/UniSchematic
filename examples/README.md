@@ -1,6 +1,6 @@
 # USC 示例
 
-[使用手册](../README.md) · [构图参考](../Reference/README.md)
+[使用手册](../README.md) · [构图参考](../reference/README.md)
 
 ## Differential Edge OTA
 
