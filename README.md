@@ -1,4 +1,18 @@
-# UniSchematic with FloorPlan & Router 设计手册（兼 Skill）
+<h1 align="center">UniSchematic</h1>
+
+<p align="center">模拟电路原理图自动布局与布线 · USC 设计手册（兼 Skill）</p>
+
+<p align="center">
+  <a href="https://github.com/KonataLin/UniSchematic/releases/latest"><strong>下载</strong></a>
+  · <a href="./examples/README.md">示例</a>
+  · <a href="./Reference/README.md">构图参考</a>
+</p>
+
+<p align="center">
+  <a href="./Reference/README.md">
+    <img src="./Reference/figures/sky130-preview.png" width="840" alt="SKY130 三模块原理图预览">
+  </a>
+</p>
 
 **前言：本 README 不含任何 AI 成分**，可以放心食用，请**您严肃遵循 UniSchematic 的 License 规范**
 

@@ -1,5 +1,7 @@
 # USC 示例
 
+[使用手册](../README.md) · [构图参考](../Reference/README.md)
+
 ## Differential Edge OTA
 
 [入口 USC](differential-edge-ota/main.usc) · [模块定义](differential-edge-ota/stages.usc) · [SVG](differential-edge-ota/final.svg)
