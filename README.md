@@ -1,6 +1,6 @@
 # UniSchematic with FloorPlan & Router 设计手册（兼 Skill）
 
-**前言：本 README 不含任何 AI 成分**，可以放心食用，请您严肃遵循 UniSchematic 的 License 规范
+**前言：本 README 不含任何 AI 成分**，可以放心食用，请您**严肃遵循 UniSchematic 的 License 规范**
 
 > **专有非商用授权 / Proprietary non-commercial license**
 >
