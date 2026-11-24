@@ -1,0 +1,182 @@
+# SKY130 dut: VDD VSS Vout VB1 VB2 VB3.
+# MOS order is D G S. Bulk ties are implicit in the drawing (PMOS to VDD, NMOS to VSS).
+# All MOS: l=0.15, w=1, nf=1, m=1.
+# PMOS/NMOS: sky130_fd_pr__pfet_01v8 / sky130_fd_pr__nfet_01v8.
+# PNP: sky130_fd_pr__pnp_05v5_W0p68L0p68, m=1. All resistors: 1 kΩ.
+circuit Sky130Dut {
+  module StartupBias() {
+    title "Startup and VB4 bias"
+
+    XM16(#754F88) net4 VB4 VSS NMOS
+    XM17(#305D87) VB4 net0 VDD PMOS
+    XM18(#754F88) VB4 VB4 net4 NMOS
+    XM19(#305D87) net0 net0 X PMOS
+    R3 VDD X RESISTOR
+    R4 net0 VSS RESISTOR
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port X
+    port VB4
+
+    track(0): X
+    track(1): R3.1, XM19.s, R4.1
+    track(2): VDD.p, VSS.p
+    track(3): XM17.s, XM18.d, XM16.d
+    track(4): VB4
+
+    face XM19: g:right s:up
+    face XM17: g:left s:up
+    face XM18 XM16: g:right s:down
+    face R3 R4: 1:up 2:down
+    face VDD.p down
+    face VSS.p up
+    face X: p:right
+    face VB4: p:left
+
+    align_y VDD.p R3.1 XM17.s
+    align_y VSS.p R4.2 XM16.s
+    align_y X (R3.2 XM19.s)
+    align_y VB4 (XM17.d XM18.d)
+    above R3.2 XM19.s
+    above XM19.d R4.1
+    above XM17.d XM18.d
+    above XM18.s XM16.d
+  }
+
+  module Feedback() {
+    title "Feedback amplifier"
+
+    XM6(#305D87) net2 VE4 VDD PMOS
+    XM7(#305D87) net1 VE4 VDD PMOS
+    XM8(#305D87) net3 Y VE3 PMOS
+    XM9(#305D87) net6 X VE3 PMOS
+    XM10(#305D87) VG VB3 net2 PMOS
+    XM11(#305D87) VE4 VB3 net1 PMOS
+    XM12(#754F88) VG VB4 net6 NMOS
+    XM13(#754F88) VE4 VB4 net3 NMOS
+    XM14(#754F88) net6 VB2 VSS NMOS
+    XM15(#754F88) net3 VB2 VSS NMOS
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port VB3
+    port VG
+    port VB4
+    port VB2
+    port X
+    port Y
+    port VE4
+    port VE3
+
+    track(0): VB3, VG, VB4, VB2
+    track(1): XM6.s, XM10.d, XM12.d, XM14.d
+    track(2): X
+    track(3): XM9.s
+    track(3.5): VDD.p, VSS.p
+    track(4): XM8.s
+    track(5): Y
+    track(6): XM7.s, XM11.d, XM13.d, XM15.d
+    track(7): VE4, VE3
+
+    face XM6 XM8: g:right s:up
+    face XM7 XM9 XM10 XM11: g:left s:up
+    face XM12 XM13 XM14 XM15: g:left s:down
+    face VDD.p down
+    face VSS.p up
+    face VB3 VG VB4 VB2 X: p:right
+    face Y VE4 VE3: p:left
+
+    align_y VDD.p XM6.s XM7.s
+    align_y VSS.p XM14.s XM15.s
+    align_y VB3 XM10.g XM11.g
+    align_y VB4 XM12.g XM13.g
+    align_y VB2 XM14.g XM15.g
+    align_y VG (XM10.d XM12.d)
+    align_y VE4 (XM11.d XM13.d)
+    align_y VE3 XM9.s XM8.s
+    align_y X XM9.g
+    align_y Y XM8.g
+
+    above XM6.d XM10.s
+    above XM7.d XM11.s
+    above XM10.d XM12.d
+    above XM11.d XM13.d
+    above XM12.s XM14.d
+    above XM13.s XM15.d
+    above VE4 VE3
+    above VE3 XM12.g
+    above Y XM14.g
+  }
+
+  module ReferenceOutput() {
+    title "PNP core and reference output"
+
+    XM1(#305D87) X VG VDD PMOS
+    XM2(#305D87) Vout VG VDD PMOS
+    XM3(#305D87) net5 VG VDD PMOS
+    XM4(#305D87) VE3 VG VDD PMOS
+    XM5(#305D87) VE3 VB1 VDD PMOS
+    XQ1(#327965) VSS VSS net5 PNP
+    XQ2(#327965) VSS net5 X PNP
+    XQ3(#327965) VSS VSS VE3 PNP
+    XQ4(#327965) VSS VE3 VE4 PNP
+    R1 Y VE4 RESISTOR
+    R2 Vout Y RESISTOR
+
+    VDD VDD SUPPLY_SYMBOL
+    VSS VSS GROUND_SYMBOL
+    port VG
+    port VB1
+    port X
+    port VE3
+    port Vout
+    port Y
+    port VE4
+
+    track(0): VG, X
+    track(1): XM1.s, XQ2.e
+    track(2): XM3.s, XQ1.e
+    track(3): XM4.s, XQ3.e
+    track(3.5): VE3
+    track(4): XM5.s
+    track(5): VDD.p, VB1, VSS.p
+    track(6): R2.1, R1.1, XQ4.e
+    track(7): XM2.s
+    track(8): Vout, Y, VE4
+
+    face XM1 XM2 XM3 XM4: g:left s:up
+    face XM5: g:right s:up
+    face XQ1 XQ2: b:right e:up
+    face XQ3 XQ4: b:left e:up
+    face R1 R2: 1:up 2:down
+    face VDD.p down
+    face VSS.p up
+    face VG X VE3: p:right
+    face VB1 Vout Y VE4: p:left
+
+    align_y VDD.p XM1.s XM2.s XM3.s XM4.s
+    align_y VSS.p XQ1.c XQ2.c XQ3.c XQ4.c
+    align_y VG XM1.g XM2.g XM3.g XM4.g
+    align_y VB1 XM5.g
+    align_y XM5.g (XM4.d XQ3.e)
+    align_y X XQ2.e
+    align_y VE3 XQ3.e
+    align_y Vout R2.1 XM2.d
+    align_y Y (R2.2 R1.1)
+    align_y VE4 (R1.2 XQ4.e)
+
+    above XM1.d XQ2.e
+    above XM3.d XQ1.e
+    above XM4.d XQ3.e
+    above XM5.d XQ3.e
+    above R2.2 R1.1
+    above R1.2 XQ4.e
+  }
+
+  layout {
+    StartupBias()
+    Feedback()
+    ReferenceOutput()
+  }
+}

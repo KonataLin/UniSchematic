@@ -1,0 +1,29 @@
+.subckt dut VDD VSS Vout VB1 VB2 VB3
+XM1 X VG VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM10 VG VB3 net2 VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM11 VE4 VB3 net1 VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM12 VG VB4 net6 VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM13 VE4 VB4 net3 VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM14 net6 VB2 VSS VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM15 net3 VB2 VSS VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM16 net4 VB4 VSS VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM17 VB4 net0 VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM18 VB4 VB4 net4 VSS sky130_fd_pr__nfet_01v8 l=0.15 w=1 nf=1 m=1
+XM19 net0 net0 X VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM2 Vout VG VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM3 net5 VG VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM4 VE3 VG VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM5 VE3 VB1 VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM6 net2 VE4 VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM7 net1 VE4 VDD VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM8 net3 Y VE3 VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XM9 net6 X VE3 VDD sky130_fd_pr__pfet_01v8 l=0.15 w=1 nf=1 m=1
+XQ1 VSS VSS net5 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
+XQ2 VSS net5 X sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
+XQ3 VSS VSS VE3 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
+XQ4 VSS VE3 VE4 sky130_fd_pr__pnp_05v5_W0p68L0p68 m=1
+R1 Y VE4 1k
+R2 Vout Y 1k
+R3 VDD X 1k
+R4 net0 VSS 1k
+.ends dut
