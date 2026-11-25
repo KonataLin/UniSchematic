@@ -326,6 +326,11 @@ The binary records acceptance locally and asks again when the agreement changes.
 
 编辑或重跑前，必须完整重读本 README，除非你确实记得每种设计方法和全部 USC 语法细节。lint 报错表明当前输入没有完全应用文档中的规则。加 `-json` 可读取同样的 `code`、`span`、`related` 和 `hint`。
 
+> [!WARNING]
+> **SPECIAL WARNING**
+>
+> 读过 README 只是第一步，当前方案仍需符合其中的规则。同类 lint 问题在修改后再次出现时，必须按程序提示从头到尾重读 README，核对当前方案是否符合规则，再继续修改。完整读一遍可以减少反复试错消耗的 token。回复 `yes`、声称已经理解或重复尝试，都不能替代这一步。
+
 - 提示 `track(k) requires 'A' above 'B'` 时，错误位置会列出轨道和两个锚点。
 - `E_EQUALITY_INFEASIBLE` 会列出参与冲突的 `align_y` 或 `center_x` 语句及其位置。这些约束在计入引脚位置后无法同时成立。
 - 端子数、端子名或朝向报错时，错误位置会列出模块和源码行。
