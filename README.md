@@ -284,10 +284,10 @@ The binary records acceptance locally and asks again when the agreement changes.
 
 ### 出图失败怎么查
 
-先看报错里的模块、文件和行列，再按 `How to fix` 检查。加 `-json` 可读取同样的 `code`、`span`、`related` 和 `hint`。
+先看报错里的模块、文件、行列和相关位置。发生布局、布线或 LVS 问题时，编辑 USC 前完整阅读本 README 和 `reference/` 目录中的全部 Reference，再重新核对原始网表与图面意图。终端中的 `Review` 只提供复盘入口，不替你决定如何修改布局。加 `-json` 可读取同样的 `code`、`span`、`related` 和 `hint`。
 
-- 提示 `track(k) requires 'A' above 'B'` 时，同轨列表要求 A 在 B 上方。如果本来想让两者等高，把其中一个放到不同轨道并保留 `align_y`。如果本来想上下叠放，检查列表顺序、`face` 方向和参与等高或上下约束的具体引脚。
-- 端子数、端子名或朝向报错时，用 `unischematic -instance MODEL` 核对端子顺序与名称，再调整器件声明或 `face`。
+- 提示 `track(k) requires 'A' above 'B'` 时，错误位置会列出轨道和两个锚点。先完整阅读本 README 与 `reference/`，再结合原始网表判断这组位置关系。
+- 端子数、端子名或朝向报错时，错误位置会列出模块和源码行。先完整阅读本 README 与 `reference/`，再核对器件库信息和原始网表。
 
 完整的网表转图案例、摆位标注和两版 USC 见 [构图参考](./reference/REFERENCE.md)。
 
